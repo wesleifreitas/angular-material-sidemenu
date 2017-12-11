@@ -8,7 +8,9 @@ This is a package to create navigation menus using Angular Material. This follow
 
 This package can be installed using npm or bower:
 
-* `npm install angular-material-sidemenu`
+**Note:** Use version `1.0.6`
+
+* `npm install ng-material-sidemenu`
 * `bower install angular-material-sidemenu`
 
 ## Usage
@@ -32,13 +34,25 @@ After that you can add the following markup:
   <md-sidemenu-group>
     <md-subheader class="md-no-sticky">Caption</md-subheader>
 
-    <md-sidemenu-content md-icon="home" md-heading="Menu 1" md-arrow="true">
+    <md-sidemenu-content collapse-other="true" md-icon="home" md-heading="Menu 1" md-arrow="true">
       <md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>
       <md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>
       <md-sidemenu-button href="#">Submenu 3</md-sidemenu-button>
     </md-sidemenu-content>
+
+    <md-sidemenu-content md-heading="Menu 2" md-arrow="true" on-hover="true">
+      <md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>
+      <md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>
+
+      <md-sidemenu-content md-heading="Menu 2" md-arrow="true">
+        <md-sidemenu-button href="#">Submenu 1</md-sidemenu-button>
+        <md-sidemenu-button href="#">Submenu 2</md-sidemenu-button>
+        <md-sidemenu-button href="#">Submenu 3</md-sidemenu-button>
+      </md-sidemenu-content>
+    </md-sidemenu-content>
+
   </md-sidemenu-group>
-  
+
   <md-sidemenu-group>
     <md-divider></md-divider>
 
@@ -59,12 +73,15 @@ Is needed to create groups of content.
 
 * `<md-sidemenu-content>`
 Define the collapsible navigation element and there's some attributes to setup. The following attributes are available:
+ - `collapse-other` - You can use to collapse all other elements.
+ - `on-hover` - You can open menu content on hover.
  - `md-icon` - You can use font icons
  - `md-svg-icon` - To use external svg icons
  - `md-heading` - The title of the section
  - `md-arrow` - An optional boolean to show an indicator arrow
 
-* `<md-sidemenu-button>` 
+
+* `<md-sidemenu-button>`
  Add the buttons inside the navigation. The following attributes are available:
  - `href` - The href for the button
  - `ui-sref` - The ui-router alternative
