@@ -307,7 +307,7 @@
 	  var size = 0;
 	
 	  for (var i = 0; i < wrapper.length; i++) {
-	    size += 48;
+	    size += screen.height;
 	    if (wrapper[i].id) {
 	      size += getTheChildrensLength(wrapper.children());
 	      continue;
